@@ -22,6 +22,8 @@ const homeController = require("./server/controllers/home")
 const americaController = require("./server/controllers/america")
 const japanController = require("./server/controllers/japan")
 const europeController = require("./server/controllers/europe")
+const carsApiController = require("./server/controllers/api/search-cars");
+ 
 
 
 
@@ -98,7 +100,10 @@ app.get("/create-cars", authMiddleware, (req, res) => {
 });
 app.post("/create-cars", carsController.create);
 
-
+app.get("/search-cars",(req,res) => {
+  res.render('search-cars', carsApiController);
+});
+app.get("/search-cars", carsApiController.list);
 
 app.get("/login", (req, res) => {
   res.render('login', { errors: {} })
@@ -115,6 +120,7 @@ app.get("/logout", async (req, res) => {
   global.user = false;
   res.redirect('/');
 })
+
 
 
 
