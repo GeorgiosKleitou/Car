@@ -66,7 +66,7 @@ exports.create = async (req, res) => {
         Electric: req.body.Electric
       });
     await cars.save();
-    res.redirect('/allcars/?message=The car has been added')
+    res.redirect('/allcars')
   } catch (e) {
     if (e.errors) {
       console.log(e.errors);
