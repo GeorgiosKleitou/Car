@@ -1,6 +1,6 @@
+const Cars = require("../models/Cars");
 const bodyParser = require("body-parser");
 const req = require("express/lib/request");
-const Cars = require("../models/Cars");
 
 
 exports.list = async (req, res) => {
