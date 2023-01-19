@@ -1,5 +1,4 @@
 const Cars = require("../models/Cars");
-const bodyParser = require("body-parser");
 
 exports.list = async (req, res) => {
     try {
