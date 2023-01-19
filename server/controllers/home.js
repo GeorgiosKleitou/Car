@@ -10,9 +10,14 @@ exports.list = async (req, res) => {
             { $count: "total"}
         ])
 
+        const allOrigins = await Cars.aggregate([
+            { $group: { _id:"$Origin", total: { $sum: 1}}},
+            { $count: "total"}
+        ])
+
         console.log(allCars)
         
-        res.render("index", {allCars: allCars, allBrands: allBrands[0].total});
+        res.render("index", {allCars: allCars, allBrands: allBrands[0].total, allOrigins: allOrigins[0].total});
     }catch (e) {
         console.log(e)
         res.status(404).send({
