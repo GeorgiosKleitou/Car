@@ -20,6 +20,7 @@
     "express-ejs-layouts": "^2.5.1",
     "express-fileupload": "^1.4.0",
     "express-session": "^1.17.3",
+    "loading-cli": "^1.1.0",
     "md5": "^2.3.0",
     "mongodb": "^4.13.0",
     "mongoose": "^6.8.3"
